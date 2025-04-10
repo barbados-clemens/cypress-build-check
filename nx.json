@@ -74,7 +74,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "nxCloudUrl": "https://staging.nx.app",
-  "nxCloudId": "67f7d784c6945e39ebbd5f50",
   "bust": 1
 }
