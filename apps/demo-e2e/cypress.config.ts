@@ -13,5 +13,7 @@ export default defineConfig({
       ciBaseUrl: 'http://localhost:4200',
     }),
     baseUrl: 'http://localhost:4200',
+    video: true,
+    screenshotOn: true,
   },
 });
