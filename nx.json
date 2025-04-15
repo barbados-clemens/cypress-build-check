@@ -46,7 +46,10 @@
       }
     },
     "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "parallelism": false
     }
   },
   "plugins": [
