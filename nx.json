@@ -15,7 +15,7 @@
       "!{projectRoot}/**/*.cy.[jt]s?(x)",
       "!{projectRoot}/cypress.config.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
@@ -46,7 +46,10 @@
       }
     },
     "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "parallelism": false
     }
   },
   "plugins": [
@@ -75,5 +78,6 @@
     }
   },
   "nxCloudUrl": "https://staging.nx.app",
-  "nxCloudId": "67f7d784c6945e39ebbd5f50"
+  "nxCloudId": "67f7d784c6945e39ebbd5f50",
+  "bust": 1
 }
