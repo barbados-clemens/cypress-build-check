@@ -19,10 +19,43 @@
           {
             "glob": "**/*",
             "input": "apps/demo/public"
+          },
+          {
+            "glob": "favicon.ico",
+            "input": "apps/crmnl/src",
+            "output": "/"
+          },
+          {
+            "glob": "blank.html",
+            "input": "apps/crmnl/src",
+            "output": "/"
+          },
+          {
+            "glob": "CHANGELOG.md",
+            "input": "apps/crmnl",
+            "output": "/"
           }
         ],
-        "styles": ["apps/demo/src/styles.css"],
-        "scripts": []
+        "styles": [
+          "apps/demo/src/styles.css",
+          {
+            "inject": true,
+            "bundleName": "tailwind",
+            "input": "libs/ui-styles/tailwind.css"
+          }
+        ],
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/demo/src"],
+          "sass": {
+            "silenceDeprecations": [
+              "global-builtin",
+              "import",
+              "mixed-decals",
+              "color-functions"
+            ]
+          }
+        }
       },
       "configurations": {
         "production": {
